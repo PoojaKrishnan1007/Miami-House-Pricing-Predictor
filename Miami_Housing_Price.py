@@ -2,8 +2,8 @@ import streamlit as st
 import joblib
 import numpy as np
 import os
-model_path = os.path.join(os.path.dirname('miami_housing_price'), 'model_joblib_gr')
-model = joblib.load('miami_housing_price')
+model_path = os.path.join(os.path.dirname('miami_housing_price'), 'miami_housing_price')
+model = joblib.load('model_path')
 
 def main():
   st.title('Miami Housing Price Predictor')
