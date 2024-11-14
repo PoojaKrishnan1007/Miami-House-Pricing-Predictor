@@ -43,11 +43,15 @@ def main():
         'month_sold': [month_sold], 
         'structure_quality': [structure_quality]
      })
-     if st.button("Predict"):
+    if st.button("Predict"):
         with st.spinner('Calculating...'):  # Display a spinner while predicting
           time.sleep(1)  # Simulate some processing time
           prediction = model.predict(input_data)[0]
           st.success(f"Predicted Price: ${prediction:,.2f}")
           st.balloons()  # Show balloons after prediction
+if _name_ == "_main_":
+  main()
+  
+        # Show balloons after prediction
 if _name_ == "_main_":
   main()
