@@ -49,9 +49,6 @@ def main():
           prediction = model.predict(input_data)[0]
           st.success(f"Predicted Price: ${prediction:,.2f}")
           st.balloons()  # Show balloons after prediction
-if _name_ == "_main_":
+if __name__ == "__main__":
   main()
-  
-        # Show balloons after prediction
-if _name_ == "_main_":
-  main()
+
