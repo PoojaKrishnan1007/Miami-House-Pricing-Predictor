@@ -50,5 +50,5 @@ def main():
       st.success(f"Predicted Price: ${prediction:,.2f}")
       st.balloons()  # Show balloons after prediction
   if __name__ == "__main__":
-    main()
+   main()
 
