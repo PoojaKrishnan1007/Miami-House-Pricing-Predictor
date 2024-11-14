@@ -2,14 +2,13 @@ import streamlit as st
 import joblib
 import numpy as np
 import os
+model_path = os.path.join(os.path.dirname('miami_housing_price'), 'model_joblib_gr')
+model = joblib.load('miami_housing_price')
 
-import joblib
-model = joblib.load('miami_housing_model.joblib')
 def main():
   st.title('Miami Housing Price Predictor')
   st.write('Enter the following details to predict the house price:')
-  model_path = os.path.join(os.path.dirname('miami_housing_price'), 'model_joblib_gr')
-model = joblib.load('miami_housing_price')
+  
 # Create input fields for features
   latitude = st.number_input("Latitude")
   longitude = st.number_input("Longitude")
@@ -34,7 +33,7 @@ model = joblib.load('miami_housing_price')
         'TOT_LVG_AREA': [tot_lvg_area],
         'SPEC_FEAT_VAL': [spec_feat_val],
         'RAIL_DIST': [rail_dist], 
- 'OCEAN_DIST': [ocean_dist],
+        'OCEAN_DIST': [ocean_dist],
         'WATER_DIST': [water_dist],
         'CNTR_DIST': [cntr_dist],
         'SUBCNTR_DI': [subcntr_di],
@@ -44,12 +43,12 @@ model = joblib.load('miami_housing_price')
         'month_sold': [month_sold], 
         'structure_quality': [structure_quality]
     })
-  if st.button("Predict"):
-    with st.spinner('Calculating...'):  # Display a spinner while predicting
-      time.sleep(1)  # Simulate some processing time
-      prediction = model.predict(input_data)[0]
-      st.success(f"Predicted Price: ${prediction:,.2f}")
-      st.balloons()  # Show balloons after prediction
+    if st.button("Predict"):
+      with st.spinner('Calculating...'):  # Display a spinner while predicting
+        time.sleep(1)  # Simulate some processing time
+        prediction = model.predict(input_data)[0]
+        st.success(f"Predicted Price: ${prediction:,.2f}")
+        st.balloons()  # Show balloons after prediction
 # Run the app
 if _name_ == "_main_":
   main()
