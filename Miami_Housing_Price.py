@@ -46,5 +46,5 @@ if st.button("Predict"):
       st.success(f"Predicted Price: ${prediction:,.2f}")
       st.balloons()  # Show balloons after prediction
 # Run the app
-if _name_ == "_main_":
-app()
+    if _name_ == "_main_":
+    app()
