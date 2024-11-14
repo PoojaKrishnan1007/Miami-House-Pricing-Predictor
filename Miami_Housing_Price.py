@@ -44,12 +44,11 @@ def main():
         'structure_quality': [structure_quality]
          })
          if st.button("Predict"):
-                    try:
-                        prediction = model.predict(input_data)
-                        st.balloons() 
-                        st.success(f"Your insurance cost is {round(prediction[0], 2)} US Dollars")
-                    except Exception as e:
-                        st.error(f"Error in prediction: {e}")
-            
-            if __name__ == '__main__':
-                main()
+       try:
+            prediction = model.predict(input_data)
+            st.balloons() 
+            st.success(f"Your insurance cost is {round(prediction[0], 2)} US Dollars")
+        except Exception as e:
+            st.error(f"Error in prediction: {e}")
+ if __name__ == '__main__':
+    main()
