@@ -47,4 +47,4 @@ st.write('Enter the following details to predict the house price:')
       st.balloons()  # Show balloons after prediction
 # Run the app
 if _name_ == "_main_":
-  main()
+app()
