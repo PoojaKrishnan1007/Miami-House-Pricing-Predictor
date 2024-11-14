@@ -2,9 +2,14 @@ import streamlit as st
 import joblib
 import numpy as np
 import os
+
+import joblib
+model = joblib.load('miami_housing_model.joblib')
 def main():
   st.title('Miami Housing Price Predictor')
   st.write('Enter the following details to predict the house price:')
+  model_path = os.path.join(os.path.dirname('miami_housing_price'), 'model_joblib_gr')
+model = joblib.load('miami_housing_price')
 # Create input fields for features
   latitude = st.number_input("Latitude")
   longitude = st.number_input("Longitude")
@@ -47,4 +52,4 @@ def main():
       st.balloons()  # Show balloons after prediction
 # Run the app
 if _name_ == "_main_":
-app()
+  main()
