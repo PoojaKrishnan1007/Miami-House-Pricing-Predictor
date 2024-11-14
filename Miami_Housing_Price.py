@@ -42,13 +42,12 @@ def main():
         'avno60plus': [avno60plus],
         'month_sold': [month_sold], 
         'structure_quality': [structure_quality]
-         })
-         if st.button("Predict"):
-       try:
-            prediction = model.predict(input_data)
-            st.balloons() 
-            st.success(f"Your insurance cost is {round(prediction[0], 2)} US Dollars")
-        except Exception as e:
-            st.error(f"Error in prediction: {e}")
- if __name__ == '__main__':
-    main()
+     })
+   if st.button("Predict"):
+        with st.spinner('Calculating...'):  # Display a spinner while predicting
+          time.sleep(1)  # Simulate some processing time
+          prediction = model.predict(input_data)[0]
+          st.success(f"Predicted Price: ${prediction:,.2f}")
+          st.balloons()  # Show balloons after prediction
+if _name_ == "_main_":
+  main()
