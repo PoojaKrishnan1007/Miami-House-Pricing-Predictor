@@ -3,8 +3,8 @@ import joblib
 import numpy as np
 import os
 def main():
-st.title('Miami Housing Price Predictor')
-st.write('Enter the following details to predict the house price:')
+  st.title('Miami Housing Price Predictor')
+  st.write('Enter the following details to predict the house price:')
 # Create input fields for features
   latitude = st.number_input("Latitude")
   longitude = st.number_input("Longitude")
@@ -46,5 +46,5 @@ st.write('Enter the following details to predict the house price:')
       st.success(f"Predicted Price: ${prediction:,.2f}")
       st.balloons()  # Show balloons after prediction
 # Run the app
-if _name_ == "_main_":
-app()
+  if _name_ == "_main_":
+  app()
