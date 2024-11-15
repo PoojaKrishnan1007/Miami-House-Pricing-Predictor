@@ -6,7 +6,7 @@ import streamlit as st
 import joblib
 import os
 
-model_path = os.path.join(os.path.dirname(_file_), 'miami_housing_price')
+model_path = os.path.join(os.path.dirname(__file__), 'miami_housing_price')
 model = joblib.load(model_path)
 def main():
     st.title("Miami Housing Price Predictor")
@@ -51,5 +51,5 @@ def main():
             st.balloons()
 
 # Run the app
-if _name_ == "_main_":
+if __name__ == "__main__":
   main()
