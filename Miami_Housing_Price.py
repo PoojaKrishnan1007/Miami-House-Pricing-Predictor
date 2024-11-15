@@ -7,10 +7,10 @@ import streamlit as st
 import joblib
 import os
 
-model_path = os.path.join(os.path.dirname(_file_), 'miami_housing_model')
+model_path = os.path.join(os.path.dirname(_file_), 'Miami_Housing_Price')
 model = joblib.load(model_path)
 def main():
-    st.title("miami housing prediction")
+    st.title("miami housing price")
     # Create input fields for features
     latitude = st.number_input("Latitude")
     longitude = st.number_input("Longitude")
