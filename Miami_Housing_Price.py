@@ -1,9 +1,6 @@
-import pandas as pd
-import numpy as np
-import seaborn as sns
-from sklearn import linear_model
 import streamlit as st
 import joblib
+import numpy as np
 import os
 
 model_path = os.path.join(os.path.dirname(__file__), 'miami_housing_price')
